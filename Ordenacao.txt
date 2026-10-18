@@ -1,0 +1,113 @@
+        Algoritmos
+O(n²)               O(nlogn)
+Bubble              Merge Sort
+Insert              B-Tree
+Select              Quick Sort (média nlogn)
+
+Ordenar:            
+- Inteiros
+- Floats
+- Strings (ASCII)
+- Estruturas
+
+Crescente, Decrescente. Deve valer propriedade:
+a <= b e b <= c, então a <= c
+
+// Pedra, papel e tesoura não há como ordenar (ciclo)
+
+Entrada:
+    |9|8|1|2|3|
+Saída:
+    |1|2|3|8|9|
+
+Ordenar String:
+    |2|100|3000|
+- Olhar Primeira Letra:
+    |100|2|3000| 100<2<3000
+
+Fronteira de Pareto:
+- Quando analiso mais de uma variavel ao mesmo tempo há uma fronteira dificil de analisar, da qual 
+    abaixo todos ganham e acima todos perdem.
+
+Selection Theta(n²) ou O(n²):
+1. Descubra posição do maior elemento.
+2. Troque maior com o ultimo.
+3. Desconsidere o ultimo elemento. 
+4. Repita o processo enquanto n>1.
+
+n - n*cte 
+(n-1) - (n-1)*cte 
+(n-2) - (n-2)*cte
+.
+.
+.
+2     - 2*cte 
+
+cte * ((2+n)(n-1))/2 = n²/2 + n/2 - 1 = theta(n²);
+
+BubbleSort Theta(n²) ou O(n²): (Bolha do refrigerante -> Maiores sobem primeiro)
+- Comparo 2 a 2
+|8|3|1|9|2|
+|3|8|1|9|2|
+|3|1|8|9|2|
+|3|1|8|2|9|
+|1|3|2|8|9|
+|1|2|3|8|9|
+
+- Mais simples, mas muitas trocas desnecessária
+
+Ordenação por Inserção:
+- Começa com Vetor Ordenado
+- Ultimo elemento desodernado
+- Ordeno v[n-1];
+
+|1|5|8|9|2|
+chave: 2 lixo: -1 (Vazio)
+|1|5|8|9|-1|
+|1|5|8|-1|9|
+|1|5|-1|8|9|
+|1|-1|5|8|9|
+
+|1|2|5|8|9|
+
+Insert Recursivo:
+InsertR(|8|4|1|2|)
+InsertR(|8|4|1|)
+InsertR(|8|4|)
+InsertR(|8|)
+OK
+InsertA() -> |4|8|
+InsertA() -> |1|4|8|
+InsertA() -> |1|2|4|8|
+
+
+Theta(n²) -> Pior Caso
+Theta(n)  -> Melhor Caso
+
+O(n²) -> Limitado superiormente por n²
+
+Medir Tempo em C:
+start = clock()
+-- Codigo
+end = clock()
+time = (1000*(double)(end-start))/CLOCK_PER_SEC
+
+Ordenacao nlogn:
+
+- MergeSort
+1. Dividir vetor ao meio
+    - Se for impar -> v1 arredonda pra baixo e v2 pra cima (5,5 -> 5 e 6)
+2. Crio 2 vetores adicionais.
+3. Copio a primeira parte para v1 e segunda parte v2 (n1+i)
+4. Chamadas recursivas (v1,n1) e (v2,n2).
+
+-> Intercalacao/Merge
+1. 3 variaveis top, cada uma apontando pro priemiro elemento dos vetores (v1, v2 e vetor final)
+2. v[top++] = v1[top1++] <= v2[top2++]?v1[top1-1]: v2[top2-1]; E repito ate completar o vetor 
+    2.1 se um dos vetores acabar eu copio tudo do outro para v
+
+
+Tempo MergeSort:
+T(1) = 1
+T(n) = 2T(n/2)+cn (Divisao + Intercalacao)
+Teorema Mestre: T(n) = Theta(nlogn) ou Theta(nlgn), diferença é apenas o valor da constante   
