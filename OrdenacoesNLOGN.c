@@ -134,13 +134,42 @@ int main(void){
     printf("\n");
 
     Teste testes[] = {
-        {"quickSort ", adaptaQuickSort},
-        {"mergeSort ", mergeSort}
+        {"quickSort", adaptaQuickSort},
+        {"mergeSort", mergeSort}
     };
     int qtd = sizeof(testes) / sizeof(testes[0]);
 
-    for(int i = 0; i < qtd; i++)
-        executaTeste(&testes[i], original, copia, n);
+    // Menu: o usuario escolhe qual funcao executar (0 encerra o programa)
+    while(1){
+        printf("Escolha a funcao de ordenacao:\n");
+        for(int i = 0; i < qtd; i++)
+            printf("  %d - %s\n", i + 1, testes[i].nome);
+        printf("  %d - Executar todas\n", qtd + 1);
+        printf("  0 - Sair\n");
+        printf("Opcao: ");
+
+        int opcao;
+        int lido = scanf("%d", &opcao);
+        if(lido == EOF) break;
+        if(lido != 1){
+            int c;
+            while((c = getchar()) != '\n' && c != EOF); // descarta a entrada invalida
+            printf("Opcao invalida.\n\n");
+            continue;
+        }
+        printf("\n");
+
+        if(opcao == 0){
+            break;
+        } else if(opcao >= 1 && opcao <= qtd){
+            executaTeste(&testes[opcao - 1], original, copia, n);
+        } else if(opcao == qtd + 1){
+            for(int i = 0; i < qtd; i++)
+                executaTeste(&testes[i], original, copia, n);
+        } else {
+            printf("Opcao invalida.\n\n");
+        }
+    }
 
     free(original);
     free(copia);
