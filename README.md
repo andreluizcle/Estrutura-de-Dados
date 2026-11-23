@@ -19,7 +19,6 @@ Cada arquivo `.c` é um programa independente, com a sua própria `main` demonst
 ├── Busca.c                        # busca binária e interseção de vetores
 ├── OrdenacoesN2.c                 # Insertion, Selection e Bubble Sort
 ├── OrdenacoesNLOGN.c              # Merge Sort e Quick Sort
-├── Ordenacao.txt                  # anotações de aula sobre ordenação
 └── PraticandoC.c                  # exercícios de struct, ponteiros e alocação dinâmica
 ```
 
@@ -99,8 +98,6 @@ Os dois arquivos de ordenação são programas interativos: você informa o tama
 
 [`OrdenacoesN2.c`](OrdenacoesN2.c) traz ainda `addOrdenado`, a inserção ordenada em lista ligada.
 
-[`Ordenacao.txt`](Ordenacao.txt) reúne as anotações de aula: passo a passo de cada algoritmo e análise de complexidade.
-
 ### Prática de C
 
 | Arquivo | O que implementa |
@@ -156,7 +153,6 @@ Observações:
 - [x] Ordenação O(n log n): Merge Sort e Quick Sort
 - [x] Busca binária (iterativa e recursiva) e busca sequencial em lista ligada
 - [x] Árvore binária de busca: inserção, busca, máximo, tamanho, altura e percursos
-- [ ] Remoção de nós da árvore binária de busca
 
 ## Autor
 
