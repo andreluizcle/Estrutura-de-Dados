@@ -80,8 +80,8 @@ gcc PraticandoC.c -o praticando_c -lm
 - [x] Filas (vetor, lista ligada e prioridade)
 - [x] Ordenação O(n²): Bubble, Insertion e Selection
 - [x] Ordenação O(n log n): Merge Sort e Quick Sort
-- [ ] Algoritmos de busca (sequencial e binária)
-- [ ] Árvores (árvore binária e árvore binária de busca, com percursos, inserção, busca e remoção)
+- [x] Algoritmos de busca (sequencial e binária)
+- [x] Árvores (árvore binária e árvore binária de busca, com percursos, inserção, busca e remoção)
 
 ## Autor
 
